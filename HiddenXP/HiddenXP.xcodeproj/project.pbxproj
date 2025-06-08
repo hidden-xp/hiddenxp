@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		C26AB24F2DF618D00042C7D3 /* omi-lib in Frameworks */ = {isa = PBXBuildFile; productRef = C26AB24E2DF618D00042C7D3 /* omi-lib */; };
+		C26AB26C2DF626490042C7D3 /* FirebaseAI in Frameworks */ = {isa = PBXBuildFile; productRef = C26AB26B2DF626490042C7D3 /* FirebaseAI */; };
+		C26AB2722DF626490042C7D3 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = C26AB2712DF626490042C7D3 /* FirebaseCore */; };
+		C26AB2782DF630050042C7D3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C26AB2772DF630050042C7D3 /* FirebaseAuth */; };
+		C26AB27A2DF630050042C7D3 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C26AB2792DF630050042C7D3 /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +74,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C26AB24F2DF618D00042C7D3 /* omi-lib in Frameworks */,
+				C26AB2722DF626490042C7D3 /* FirebaseCore in Frameworks */,
+				C26AB26C2DF626490042C7D3 /* FirebaseAI in Frameworks */,
+				C26AB27A2DF630050042C7D3 /* FirebaseFirestore in Frameworks */,
+				C26AB2782DF630050042C7D3 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +139,10 @@
 			name = HiddenXP;
 			packageProductDependencies = (
 				C26AB24E2DF618D00042C7D3 /* omi-lib */,
+				C26AB26B2DF626490042C7D3 /* FirebaseAI */,
+				C26AB2712DF626490042C7D3 /* FirebaseCore */,
+				C26AB2772DF630050042C7D3 /* FirebaseAuth */,
+				C26AB2792DF630050042C7D3 /* FirebaseFirestore */,
 			);
 			productName = HiddenXP;
 			productReference = C28DCEC62DF6025A0043E5C8 /* HiddenXP.app */;
@@ -216,6 +228,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				C26AB24D2DF618D00042C7D3 /* XCRemoteSwiftPackageReference "omi" */,
+				C26AB26A2DF626490042C7D3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C28DCEC72DF6025A0043E5C8 /* Products */;
@@ -590,6 +603,14 @@
 				kind = branch;
 			};
 		};
+		C26AB26A2DF626490042C7D3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.14.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -597,6 +618,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C26AB24D2DF618D00042C7D3 /* XCRemoteSwiftPackageReference "omi" */;
 			productName = "omi-lib";
+		};
+		C26AB26B2DF626490042C7D3 /* FirebaseAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C26AB26A2DF626490042C7D3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAI;
+		};
+		C26AB2712DF626490042C7D3 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C26AB26A2DF626490042C7D3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		C26AB2772DF630050042C7D3 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C26AB26A2DF626490042C7D3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		C26AB2792DF630050042C7D3 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C26AB26A2DF626490042C7D3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

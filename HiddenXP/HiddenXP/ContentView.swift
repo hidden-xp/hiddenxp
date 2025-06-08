@@ -1,13 +1,17 @@
 import SwiftUI
+import FirebaseCore
 import omi_lib
+import FirebaseAI
 
 @Observable
 class Model {
-  private var isScanning = false
+  private let llm: GenerativeModel
+  var text = "initializing..."
   
-  func startScanning() {
-    guard !isScanning else { return }
-    isScanning = true
+  init() {
+    FirebaseApp.configure()
+    let ai = FirebaseAI.firebaseAI(backend: .googleAI())
+    llm = ai.generativeModel(modelName: "gemini-2.0-flash")
     lookForDevice()
   }
   
@@ -15,7 +19,9 @@ class Model {
     OmiManager.startScan { device, error in
       // connect to first found omi device
       print("starting scan")
+      self.text = "connecting..."
       if let device = device {
+        self.text = "Connected!"
         print("got device ", device)
         self.connectToOmiDevice(device: device)
         OmiManager.endScan()
@@ -55,8 +61,42 @@ class Model {
   }
   
   private func listenToLiveAudio(device: Device) {
-    OmiManager.getLiveAudio(device: device) { file_url in
-      print("file_url: ", file_url?.absoluteString ?? "no url")
+    OmiManager.getLiveAudio(device: device) { audioURL in
+      self.text = ". . ."
+      Task {
+        do {
+          
+//          // Provide a prompt that contains text
+//          let prompt = "Write a story about a magic backpack."
+//          
+//          // To generate text output, call generateContent with the text input
+//          let response = try await self.llm.generateContent(prompt)
+          
+          // Provide the audio as `Data`
+          guard let audioURL,
+                let audioData = try? Data(contentsOf: audioURL) else {
+            print("Error loading audio data.")
+            return // Or handle the error appropriately
+          }
+          
+          // Specify the appropriate audio MIME type
+          let audio = InlineDataPart(data: audioData, mimeType: "audio/mpeg")
+          
+          
+          // Provide a text prompt to include with the audio
+          let prompt = "Transcribe what's said in this audio recording or if there is no audio just respond with ... (dots)"
+          
+          // To generate text output, call `generateContent` with the audio and text prompt
+          let response = try await self.llm.generateContent(audio, prompt)
+          if let text = response.text {
+            self.text = text
+          } else {
+            self.text = "..."
+          }
+        } catch {
+          print("Error: \(error)")
+        }
+      }
     }
   }
 }
@@ -66,14 +106,9 @@ struct ContentView: View {
   
   var body: some View {
     VStack {
-      Image(systemName: "globe")
-        .imageScale(.large)
-        .foregroundStyle(.tint)
+      Text(model.text)
     }
     .padding()
-    .onAppear {
-      model.startScanning()
-    }
   }
   
 }
