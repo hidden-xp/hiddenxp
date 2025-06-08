@@ -33,9 +33,22 @@
 		C28DCEDD2DF6025B0043E5C8 /* HiddenXPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HiddenXPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		C26AB2692DF61CDE0042C7D3 /* Exceptions for "HiddenXP" folder in "HiddenXP" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = C28DCEC52DF6025A0043E5C8 /* HiddenXP */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		C28DCEC82DF6025A0043E5C8 /* HiddenXP */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				C26AB2692DF61CDE0042C7D3 /* Exceptions for "HiddenXP" folder in "HiddenXP" target */,
+			);
 			path = HiddenXP;
 			sourceTree = "<group>";
 		};
@@ -407,6 +420,8 @@
 				DEVELOPMENT_TEAM = US92AKFW63;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HiddenXP/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -436,6 +451,8 @@
 				DEVELOPMENT_TEAM = US92AKFW63;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HiddenXP/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
