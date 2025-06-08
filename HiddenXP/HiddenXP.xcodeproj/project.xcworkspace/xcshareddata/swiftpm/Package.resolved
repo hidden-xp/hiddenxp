@@ -1,0 +1,42 @@
+{
+  "originHash" : "703c4fc041e780685b1d014b1e58f1b0f1390a93946ef3fcbe50604d08032cb7",
+  "pins" : [
+    {
+      "identity" : "audiokit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AudioKit/AudioKit.git",
+      "state" : {
+        "revision" : "5b3fd238ef8ee95c9842ca4ea83ca58ee151e630",
+        "version" : "5.6.5"
+      }
+    },
+    {
+      "identity" : "omi",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/BasedHardware/omi",
+      "state" : {
+        "branch" : "main",
+        "revision" : "e62d55a1cfb08e552cdfd4bbcaa59e23e48b833a"
+      }
+    },
+    {
+      "identity" : "swift-opus",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nelcea/swift-opus.git",
+      "state" : {
+        "revision" : "a22f542387f1dd72c6c045ecc3b21dfed71acce2",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "swiftwhisper",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/exPHAT/SwiftWhisper.git",
+      "state" : {
+        "branch" : "fast",
+        "revision" : "deb1cb6a27256c7b01f5d3d2e7dc1dcc330b5d01"
+      }
+    }
+  ],
+  "version" : 3
+}
